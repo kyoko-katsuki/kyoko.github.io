@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Para tu ♡</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #f7a8c4;
+      font-family: Georgia, serif;
+      color: #7b3f58;
+      padding: 25px 15px;
+    }
+
+    .contenedor {
+      max-width: 900px;
+      margin: auto;
+      background: #ffdce8;
+      border: 2px solid #f4b6cc;
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 8px 20px rgba(100, 40, 70, .18);
+    }
+
+    .titulo {
+      text-align: center;
+      font-style: italic;
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
+
+    .contenido {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 25px;
+    }
+
+    .tarjeta {
+      background: #ffeaf1;
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 7px 15px rgba(100, 40, 70, .18);
+      text-align: center;
+    }
+
+    .tarjeta h2 {
+      margin-top: 0;
+      font-size: 22px;
+      font-style: italic;
+    }
+
+    .flores {
+      height: 280px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 100px;
+    }
+
+    .video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .boton {
+      display: block;
+      width: 180px;
+      margin: 25px auto 0;
+      padding: 12px;
+      background: #f36fa0;
+      color: white;
+      text-decoration: none;
+      border-radius: 15px;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 5px 10px rgba(100, 40, 70, .2);
+    }
+
+    .boton:hover {
+      transform: scale(1.04);
+    }
+
+    .decoracion {
+      text-align: center;
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 650px) {
+      .contenido {
+        grid-template-columns: 1fr;
+      }
+
+      .titulo {
+        font-size: 24px;
+      }
+
+      .flores {
+        height: 220px;
+      }
+      #musicBtn {
+  display: block;
+  margin: 15px auto;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 20px;
+  background: #f28caf;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(120, 50, 80, 0.2);
+}
+
+#musicBtn:hover {
+  transform: scale(1.05);
+}
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="contenedor">
+
+    <div class="decoracion">
+      ♡ ୨୧ ♡
+    </div>
+
+    <h1 class="titulo">Something that reminds me of us ♡</h1>
+
+    <div class="contenido">
+
+      <!-- TARJETA DE LAS FLORES -->
+      <div class="tarjeta">
+        <h2>Your favourite flowers</h2>
+
+        <div class="flores">
+          🌷🌷🌷
+        </div>
+
+        <p>TEXT HERE ♡</p>
+      </div>
+
+      <!-- TARJETA DEL VIDEO -->
+      <div class="tarjeta">
+        <h2>A song that reminds me of us</h2>
+
+      <iframe
+  id="musica"
+  width="1"
+  height="1"
+  src="https://www.youtube.com/embed/il3x1LzfxGk?enablejsapi=1&autoplay=1&loop=1&playlist=il3x1LzfxGk&mute=1"
+  frameborder="0"
+  allow="autoplay">
+</iframe>
+        <button id="musicBtn" onclick="toggleMusic()">
+  🎵 ON
+</button>
+      <script>
+let musicaActiva = false;
+
+function toggleMusic() {
+  const iframe = document.getElementById("musica");
+  const boton = document.getElementById("musicBtn");
+
+  if (!musicaActiva) {
+    iframe.src =
+      "https://www.youtube.com/embed/il3x1LzfxGk?enablejsapi=1&autoplay=1&loop=1&playlist=il3x1LzfxGk";
+
+    boton.textContent = "🎵 OFF";
+    musicaActiva = true;
+
+  } else {
+    iframe.src =
+      "https://www.youtube.com/embed/il3x1LzfxGk?enablejsapi=1&autoplay=0&loop=1&playlist=il3x1LzfxGk&mute=1";
+
+    boton.textContent = "🎵 ON";
+    musicaActiva = false;
+  }
+}
+</script>  
+
+        <p>🎵 ♡ 🎵</p>
+      </div>
+
+    </div>
+
+    <a class="boton" href="pagina2.html">
+      NEXT ♡
+    </a>
+
+  </div>
+
+</body>
+</html>
