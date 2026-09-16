@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Para tu ♡</title>
+  <title>Para ti ♡</title>
 
   <style>
     * {
@@ -72,6 +72,10 @@
       padding: 15px;
     }
 
+    .mensaje fuerte {
+      font-weight: bold;
+    }
+
     .boton {
       display: block;
       width: 180px;
@@ -107,4 +111,152 @@
       font-size: 15px;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(120, 50, 80,
+      box-shadow: 0 4px 10px rgba(120, 50, 80, 0.2);
+    }
+
+    #musicBtn:hover {
+      transform: scale(1.05);
+    }
+
+    #musica {
+      width: 1px;
+      height: 1px;
+      border: 0;
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .nota {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 650px) {
+      .contenido {
+        grid-template-columns: 1fr;
+      }
+
+      .titulo {
+        font-size: 24px;
+      }
+
+      .flores {
+        height: 220px;
+        font-size: 60px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="contenedor">
+
+    <div class="decoracion">
+      ♡ ୨୧ ♡
+    </div>
+
+    <h1 class="titulo">
+      Para tu ♡
+    </h1>
+
+    <div class="contenido">
+
+      <!-- TARJETA DEL MENSAJE -->
+      <div class="tarjeta">
+
+        <h2>Holi ♡</h2>
+
+        <div class="flores">
+          🐁✨️
+        </div>
+
+        <div class="mensaje">
+          <p>
+            Holi, pasaba solo para recordarte algo...
+          </p>
+
+          <p>
+            Te quiero muchísimo ♡
+          </p>
+
+          <p>
+            Solo quería dejarte este pequeño detalle
+            para recordarte lo especial que eres para mí.
+          </p>
+
+          <p>
+            Gracias por leer UwU
+          </p>
+        </div>
+
+      </div>
+
+
+      <!-- TARJETA DE LA MÚSICA -->
+      <div class="tarjeta">
+
+        <h2>Pa que le bailes ♡</h2>
+
+        <p class="mensaje">
+          esta muy buena (espera a que pasen los comerciales🥺) 🎵
+        </p>
+
+        <iframe
+  id="musica"
+  src="https://www.youtube.com/embed/3mHdCHbM3xc?enablejsapi=1&loop=1&playlist=3mHdCHbM3xc&mute=1"
+  allow="autoplay"
+  title="Música">
+</iframe>
+
+        <button id="musicBtn" onclick="toggleMusic()">
+          🎵 Escuchar
+        </button>
+
+        <p class="nota">
+          Toca el botón para escuchar ♡
+        </p>
+
+        <p>🎵 ♡ 🎵</p>
+
+      </div>
+
+    </div>
+
+    <a class="boton" href="pagina2.html">
+      NEXT ♡
+    </a>
+
+  </div>
+
+
+  <script>
+    let musicaActiva = false;
+
+    function toggleMusic() {
+
+      const iframe = document.getElementById("musica");
+      const boton = document.getElementById("musicBtn");
+
+      if (!musicaActiva) {
+
+        iframe.src =
+  "https://www.youtube.com/embed/3mHdCHbM3xc?autoplay=1&loop=1&playlist=3mHdCHbM3xc";
+
+        boton.textContent = "🎵 Pausar";
+        musicaActiva = true;
+
+      } else {
+
+        iframe.src =
+  "https://www.youtube.com/embed/3mHdCHbM3xc?autoplay=0&loop=1&playlist=3mHdCHbM3xc&mute=1";
+
+        boton.textContent = "🎵 Escuchar";
+        musicaActiva = false;
+      }
+    }
+  </script>
+
+</body>
+</html>
